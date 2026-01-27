@@ -195,3 +195,24 @@ curl -X POST -H "Content-Type: application/json" -d '{"bookId":1,"memberId":1}' 
 curl -X PUT http://localhost:8080/api/return/1
 ```
 
+## Run Unit Tests
+
+คุณสามารถรัน unit tests ของโปรเจกต์ `library` ได้สองวิธี:
+
+- โดยตรงผ่าน Maven:
+
+```bash
+cd Lab3-4_Rest-API/bkwcw-spring_labs/library
+mvn test
+```
+
+- หรือใช้สคริปต์ที่เตรียมไว้ ซึ่งจะรัน `mvn test` และพิมพ์ข้อความสีเขียวเมื่อผ่านทั้งหมด:
+
+```bash
+cd Lab3-4_Rest-API/bkwcw-spring_labs/library
+./scripts/run-tests.sh
+```
+
+สคริปต์ `scripts/run-tests.sh` จะคืนสถานะทางออก (exit code) ตามผลการทดสอบ — 0 ถ้าผ่านทั้งหมด
+
+
