@@ -1,0 +1,54 @@
+{
+  "info": {
+    "name": "Library API - Lab3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Clean Code\",\n  \"author\": \"Robert C. Martin\",\n  \"publicationYear\": 2008,\n  \"genre\": \"Programming\",\n  \"availableCopies\": 3\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api","books"] }
+      }
+    },
+    {
+      "name": "Create Member",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Somchai\",\n  \"email\": \"somchai@example.com\",\n  \"phoneNumber\": \"0812345678\",\n  \"startDate\": \"2026-01-01\",\n  \"endDate\": \"2027-01-01\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/members", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api","members"] }
+      }
+    },
+    {
+      "name": "Borrow Book",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"book\": { \"id\": 1 },\n  \"member\": { \"id\": 1 }\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/borrow", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api","borrow"] }
+      }
+    },
+    {
+      "name": "Return Book",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": { "raw": "http://localhost:8080/api/return/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api","return","1"] }
+      }
+    }
+  ]
+}
