@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Viewer Page</title>
+ <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+		}
+		.panel {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			width: 420px;
+			text-align: center;
+		}
+		.panel select {
+			width: 80%;
+			padding: 10px;
+			margin: 10px 0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+		.panel button {
+			padding: 10px 20px;
+			background-color: #2d2db0;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+ <div class="panel">
+	 <h1>Viewer Dashboard</h1>
+	 <h2>Hello, <span th:text="${username}"></span>!</h2>
+	 <h3>Clothing Categories</h3>
+	 <select name="categories" id="categories">
+		 <option value="" disabled selected>Select a category</option>
+		 <option value="mens-clothing">Men's Clothing</option>
+		 <option value="womens-clothing">Women's Clothing</option>
+		 <option value="kids-clothing">Kids' Clothing</option>
+		 <option value="shoes">Shoes</option>
+		 <option value="accessories">Accessories</option>
+		 <option value="sportswear">Sportswear</option>
+	 </select>
+	 <form th:action="@{/logout}" method="post">
+		 <button type="submit">Logout</button>
+	 </form>
+ </div>
+</body>
+</html>
