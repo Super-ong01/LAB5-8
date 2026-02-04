@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;   /* กลางแนวนอน */
+            align-items: center;       /* กลางแนวตั้ง */
+            height: 100vh;
+            margin: 0;
+        }
+
+        .auth-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center; /* ข้อความอยู่กลาง */
+        }
+
+        /* ⭐ สำคัญ: จัด form ให้อยู่กลาง */
+        .auth-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* input + button อยู่กลาง */
+        }
+
+        .auth-container input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center; /* ตัวอักษรในช่องอยู่กลาง */
+        }
+
+        .auth-container button {
+            width: 80%;
+            padding: 10px;
+            background-color: #2d2db0;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Login</h2>
+        <form th:action="@{/login}" method="post">
+            <input type="text" name="username" placeholder="Username" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a th:href="@{/register}">Register Here</a></p>
+    </div>
+</body>
+</html>
