@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Admin Page</title>
+ <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+		}
+		.panel {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			width: 480px;
+			text-align: center;
+		}
+		.panel button {
+			padding: 10px 20px;
+			background-color: #2d2db0;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+ <div class="panel">
+	 <h1>Admin Dashboard</h1>
+	 <h2>Welcome, <span th:text="${username}">admin</span>!</h2>
+	 <p>Total turnover this month $3,500,000</p>
+	 <p>Current stock worth $2,500,000</p>
+	 <form th:action="@{/logout}" method="post">
+		 <button type="submit">Logout</button>
+	 </form>
+ </div>
+</body>
+</html>
