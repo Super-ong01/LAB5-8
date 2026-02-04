@@ -1,0 +1,62 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting Page</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .greeting-container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 320px;
+        text-align: center;
+      }
+
+      .greeting-container h1 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .greeting-container span {
+        color: #28a745;
+      }
+
+      .greeting-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .greeting-container button:hover {
+        background-color: #c82333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="greeting-container">
+      <h1>Hello, <span th:text="${username}">User</span> 👋</h1>
+
+      <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+      </form>
+    </div>
+  </body>
+</html>
